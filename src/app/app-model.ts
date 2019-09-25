@@ -1,36 +1,36 @@
 export class Task {
-    taskname: string;
-    priority: number;
-    priorityTo: number;
-    parentid: string;
-    startdt: Date;
-    enddt: Date;
-    status: boolean;
-    finished: boolean;
-    running: boolean;
-    userid: string;
-    projectid: string;
-    onModel: string;
-    olduser: string;
+    taskId: number;
+    taskName: string;
+    parent: Parent = new Parent();
+    priority: number = 0;
+    startDate: string;
+    endDate: string;
+    project: Project = new Project();
+    user: User = new User();
+    status: string;
 }
 
 export class Project {
-    project: string;
+    projectId: number;
+    projectName: string;
     priority: number;
-    startdt: Date;
-    enddt: Date;
-    manager: string;
-    finished: boolean;
-    totaltask: number;
-    oldmanager: string;
+    startDate: Date;
+    endDate: Date;
+    status: number;
+    user: User = new User();
+    noOfTask: number;
+    nofCompTask: number;
 }
 
 export class Parent {
-    taskname: string;
+    parentId: number;
+    parentTask: string = '';
+
 }
 
 export class User {
-    firstName: string;
-    lastName: string;
-    employeeId: string;
+    userId: number;
+    firstName: string = '';
+    lastName: string = '';
+    employeeId: string = '';
 }

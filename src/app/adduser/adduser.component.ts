@@ -106,8 +106,8 @@ export class AdduserComponent implements OnInit {
     this.router.navigateByUrl('/upduser/' + pEmpId);
   }
 
-  deleteUser(): void {
-    this.adduserService.deleteuser(this.tobedeletedId).subscribe((res: any) => {
+  deleteUser(user: User): void {
+    this.adduserService.deleteuser(this.user.userId).subscribe((res: any) => {
         if (res) {
           this.userActionString = 'deleted';
           this.ifPostedSuccessfully = true;

@@ -17,7 +17,7 @@ export class AdduserService {
     this.uriBase = 'http://localhost:8888/api/v1/';
     this.apiAddUser = 'addUser/';
     this.apiGetUser = 'users/';
-    this.apiDelUser = 'user/{userId}/';
+    this.apiDelUser = 'user/';
   }
 
   addnewuser(user: User): Observable<any> {
@@ -30,8 +30,8 @@ export class AdduserService {
     return this.httpConnection.get(newUrl);
   }
 
-  deleteuser(pEmpId: string): Observable<any> {
-    const newUrl = this.uriBase + this.apiDelUser + pEmpId;
+  deleteuser(pEmpId: number): Observable<any> {
+    const newUrl = this.uriBase + this.apiDelUser + pEmpId+"/";
     return this.httpConnection.delete(newUrl);
   }
 }

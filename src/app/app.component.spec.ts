@@ -4,11 +4,11 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddtaskService } from './addtask/addtask.service';
 import { ViewtaskService } from './viewtask/viewtask.service';
-import { UpdtaskService } from './updtask/updtask.service';
+import { UpdatetaskService } from './updatetask/updatetask.service';
 import { AdduserService } from './adduser/adduser.service';
-import { UpduserService } from './upduser/upduser.service';
+import { UpdateuserService } from './updateuser/updateuser.service';
 import { AddprojectService } from './addproject/addproject.service';
-import { UpdprojectService } from './updproject/updproject.service';
+import { UpdateprojectService } from './updateproject/updateproject.service';
 import { HttpClientModule } from '@angular/common/http';
 
 xdescribe('AppComponent', () => {
@@ -26,11 +26,11 @@ xdescribe('AppComponent', () => {
       providers: [
         AddtaskService,
         ViewtaskService,
-        UpdtaskService,
+        UpdatetaskService,
         AdduserService,
-        UpduserService,
+        UpdateuserService,
         AddprojectService,
-        UpdprojectService
+        UpdateprojectService
       ]
     }).compileComponents();
   }));
