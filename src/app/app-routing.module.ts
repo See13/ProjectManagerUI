@@ -1,49 +1,37 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AddtaskComponent } from './addtask/addtask.component';
-import { ViewtaskComponent } from './viewtask/viewtask.component';
-import { AdduserComponent } from './adduser/adduser.component';
-import { AddprojectComponent } from './addproject/addproject.component';
-import { UpdateuserComponent } from './updateuser/updateuser.component';
-import { UpdateprojectComponent } from './updateproject/updateproject.component';
-import { UpdatetaskComponent } from './updatetask/updatetask.component';
-
-
+import {UserComponent} from './UI/user/user.component';
+import {ProjectComponent} from './UI/project/project.component';
+import {AddTaskComponent} from './UI/add-task/add-task.component';
+import {ViewTaskComponent} from './UI/view-task/view-task.component';
+import {EditTaskComponent} from './UI/edit-task/edit-task.component';
+import {Task} from './model/task'
 const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
-    redirectTo: 'addproject'
+    component: UserComponent
   },
   {
-    path: 'addproject',
-    component: AddprojectComponent
+    path: 'user',
+    component: UserComponent
   },
   {
-    path: 'adduser',
-    component: AdduserComponent
+    path: 'project',
+    component: ProjectComponent
   },
   {
-    path: 'addtask',
-    component: AddtaskComponent
+    path: 'task',
+    component: AddTaskComponent
   },
   {
-    path: 'updateproject/:id',
-    component: UpdateprojectComponent
-  },
-  {
-    path: 'updateuser/:id',
-    component: UpdateuserComponent
-  },
-  {
-    path: 'updatetask/:id',
-    component: UpdatetaskComponent
-  },
-  {
-    path: 'viewtask',
-    component: ViewtaskComponent
+    path: 'viewTask',
+    component: ViewTaskComponent
   },
 
+  {
+    path: 'update/:taskId',
+    component: EditTaskComponent
+  }
 ];
 
 @NgModule({

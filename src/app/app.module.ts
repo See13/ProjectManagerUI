@@ -1,54 +1,41 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
-import { AppRoutingModule,  } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddtaskComponent } from './addtask/addtask.component';
-import { ViewtaskComponent } from './viewtask/viewtask.component';
-import { UpdatetaskComponent } from './updatetask/updatetask.component';
-import { UpdateuserComponent } from './updateuser/updateuser.component';
-import { AdduserComponent } from './adduser/adduser.component';
-import { AddprojectComponent } from './addproject/addproject.component';
-import { UpdateprojectComponent } from './updateproject/updateproject.component';
+import { UserComponent } from './UI/user/user.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UserSearchPipe } from './pipe/user-search.pipe';
+import { ProjectComponent } from './UI/project/project.component';
+import { ProjectPipe } from './pipe/project.pipe';
+import { DatePipe } from '@angular/common';
+import { ViewTaskComponent } from './UI/view-task/view-task.component';
+import { EditTaskComponent } from './UI/edit-task/edit-task.component';
+import { AddTaskComponent } from './UI/add-task/add-task.component';
+import { ParentPipe } from './pipe/parent.pipe';
+import { FilterPipe } from './pipe/filter.pipe';
 
-import { AddtaskService } from './addtask/addtask.service';
-import { ViewtaskService } from './viewtask/viewtask.service';
-import { UpdatetaskService } from './updatetask/updatetask.service';
-import { AdduserService } from './adduser/adduser.service';
-import { UpdateuserService } from './updateuser/updateuser.service';
-import { AddprojectService } from './addproject/addproject.service';
-import { UpdateprojectService } from './updateproject/updateproject.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddtaskComponent,
-    ViewtaskComponent,
-    UpdatetaskComponent,
-    AdduserComponent,
-    AddprojectComponent,
-    UpdateuserComponent,
-    UpdateprojectComponent
+    UserComponent,
+    UserSearchPipe,
+    ProjectComponent,
+    ProjectPipe,
+    ViewTaskComponent,
+    EditTaskComponent,
+    AddTaskComponent,
+    ParentPipe,
+    FilterPipe,
+    
   ],
   imports: [
-    RouterModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule
+    FormsModule,HttpClientModule
   ],
-  providers: [
-    AddtaskService,
-    ViewtaskService,
-    UpdatetaskService,
-    AdduserService,
-    UpdateuserService,
-    AddprojectService,
-    UpdateprojectService
-  ],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
